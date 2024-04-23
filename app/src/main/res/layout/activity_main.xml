@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="31dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+
+            android:id="@+id/button1"
+            android:layout_width="201dp"
+            android:layout_height="58dp"
+            android:text="Sign In"
+            android:textColor="#3AB795"
+            android:background="@drawable/button_rounded"
+            android:layout_marginEnd="2dp" />
+
+        <Button
+
+            android:id="@+id/button2"
+            android:layout_width="201dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/button_rounded_green"
+            android:text="Sign Up"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:background="@color/material_on_surface_stroke"
+        android:layout_marginTop="580dp"
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="77dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Welcome,"
+        android:textSize="32sp"
+        android:typeface="normal"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="monospace"
+        android:text="Our application is here to help you manage your shopping list and to reduce expenses and food waste."
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:typeface="normal" />
+
+</RelativeLayout>
