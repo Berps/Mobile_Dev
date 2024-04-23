@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button1"
             android:layout_width="201dp"
             android:layout_height="58dp"
@@ -30,8 +30,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView5"
+        <EditText
+            android:id="@+id/EditText5"
             android:layout_width="360dp"
             android:layout_height="50dp"
             android:layout_marginTop="775px"
@@ -40,8 +40,9 @@
             android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
-            android:text="Email@hotmail.com"
-            android:textColor="#3AB795" />
+            android:hint="Email@hotmail.com"
+            android:textColor="#3AB795"
+            android:textColorHint="#A0E8AF"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="360dp"
@@ -49,8 +50,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView6"
+        <EditText
+            android:id="@+id/EditText6"
             android:layout_width="360dp"
             android:layout_height="50dp"
             android:layout_marginTop="930px"
@@ -59,7 +60,10 @@
             android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
-            android:text="Password"
-            android:textColor="#3AB795" />
+            android:hint="Password"
+            android:textColor="#3AB795"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColorHint="#A0E8AF"/>
     </LinearLayout>
 </RelativeLayout>
