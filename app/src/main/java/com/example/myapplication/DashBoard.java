@@ -24,8 +24,8 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 IntentIntegrator integrator = new IntentIntegrator(DashBoard.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
-                integrator.setPrompt("Scan a QR Code");
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
+                integrator.setPrompt("Scan a QR Code or Barcode");
                 integrator.initiateScan();
             }
         });
@@ -36,8 +36,8 @@ public class DashBoard extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() != null) {
-                String qrCodeValue = result.getContents();
-                qrCodeInfo.setText("QR Code: " + qrCodeValue);
+                String scanResult = result.getContents();
+                qrCodeInfo.setText("Scan Result: " + scanResult);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
