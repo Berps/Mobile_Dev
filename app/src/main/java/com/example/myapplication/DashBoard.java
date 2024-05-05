@@ -1,46 +1,46 @@
 package com.example.myapplication;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+
+import android.os.Bundle;import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import android.os.Bundle;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 
 public class DashBoard extends AppCompatActivity {
-    Button scanButton;
-    TextView qrCodeInfo;
+
+    private ViewPagerAdapter viewPagerAdapter;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dash_board);
 
-        scanButton = findViewById(R.id.scanButton);
-        qrCodeInfo = findViewById(R.id.qrCodeInfo);
-        scanButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                IntentIntegrator integrator = new IntentIntegrator(DashBoard.this);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-                integrator.setPrompt("Scan a QR Code or Barcode");
-                integrator.initiateScan();
-            }
-        });
-    }
+        viewPager = findViewById(R.id.viewpager);
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null) {
-            if(result.getContents() != null) {
-                String scanResult = result.getContents();
-                qrCodeInfo.setText("Scan Result: " + scanResult);
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+        // setting up the adapter
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        // add the fragments
+        viewPagerAdapter.add(new Page3(), "DashBoard");
+        viewPagerAdapter.add(new Page2(), "Scanner");
+        viewPagerAdapter.add(new Page1(), "Near Locations");
+
+        // Set the adapter
+        viewPager.setAdapter(viewPagerAdapter);
+
+        // The Page (fragment) titles will be displayed in the
+        // tabLayout hence we need to  set the page viewer
+        // we use the setupWithViewPager().
+        tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
