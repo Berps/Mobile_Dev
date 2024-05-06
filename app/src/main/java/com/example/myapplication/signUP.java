@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ public class signUP extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailEditText.getText().toString();
+                final String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
                 registerUser(email, password);
             }
@@ -39,6 +40,12 @@ public class signUP extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
+                        // Save email to SharedPreferences
+                        SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("email", email);
+                        editor.apply();
+
                         Intent intent = new Intent(signUP.this, DashBoard.class);
                         startActivity(intent);
                         finish();

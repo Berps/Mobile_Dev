@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background"
     tools:context=".Page3">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textViewEmail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="DashBoard"
+        android:text="Welcome"
         android:fontFamily="monospace"
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="bold" />
 </FrameLayout>
-

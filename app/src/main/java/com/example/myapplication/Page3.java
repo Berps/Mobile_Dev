@@ -1,26 +1,28 @@
 package com.example.myapplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.widget.TextView;
 import androidx.fragment.app.Fragment;
+
 public class Page3 extends Fragment {
+
     public Page3() {
-        // required empty public constructor.
+        // Required empty public constructor
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_page3, container, false);
+        TextView textView = view.findViewById(R.id.textViewEmail);
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_page3, container, false);
+        SharedPreferences preferences = getActivity().getSharedPreferences("AppPrefs", getActivity().MODE_PRIVATE);
+        String email = preferences.getString("email", "No Email Found");
+        textView.setText("Welcome " + email);
+
+        return view;
     }
 }
-
