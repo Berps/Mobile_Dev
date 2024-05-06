@@ -1,6 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/green</item>
+        <item name="android:colorSecondary">#A0E8AF</item>
+        <item name="android:colorAccent">#A0E8AF</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorActivatedHighlight">@color/green</item>
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
