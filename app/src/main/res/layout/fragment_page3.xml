@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F9D58"
+    android:background="@drawable/background"
     tools:context=".Page3">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Page 3"
+        android:text="DashBoard"
+        android:fontFamily="monospace"
         android:textColor="@color/white"
         android:textSize="60sp"
         android:textStyle="bold" />

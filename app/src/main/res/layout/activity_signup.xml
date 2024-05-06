@@ -17,10 +17,11 @@
             android:id="@+id/button1"
             android:layout_width="201dp"
             android:layout_height="58dp"
-            android:text="Sign Up"
-            android:textColor="#3AB795"
+            android:layout_marginEnd="2dp"
             android:background="@drawable/button_rounded"
-            android:layout_marginEnd="2dp"/>
+            android:fontFamily="monospace"
+            android:text="Sign Up"
+            android:textColor="#3AB795" />
 
     </LinearLayout>
     <LinearLayout
@@ -29,31 +30,35 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/EditText"
             android:layout_width="195dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="465px"
             android:layout_marginEnd="2dp"
-            android:layout_marginLeft="2dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
+            android:fontFamily="monospace"
+            android:gravity="center"
             android:hint="First Name"
             android:textColor="#3AB795"
-            android:textColorHint="#A0E8AF"/>
+            android:textColorHint="#A0E8AF" />
+
         <EditText
             android:id="@+id/EditText2"
             android:layout_width="195dp"
             android:layout_height="50dp"
             android:layout_marginTop="465px"
             android:layout_marginEnd="2dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
+            android:fontFamily="monospace"
+            android:gravity="center"
             android:hint="Last Name"
             android:textColor="#3AB795"
-            android:textColorHint="#A0E8AF"/>
+            android:textColorHint="#A0E8AF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="360dp"
@@ -61,19 +66,21 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/EditText3"
             android:layout_width="360dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="620px"
             android:layout_marginEnd="2dp"
-            android:layout_marginLeft="2dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
+            android:fontFamily="monospace"
+            android:gravity="center"
             android:hint="Email@adress.com"
             android:textColor="#3AB795"
-            android:textColorHint="#A0E8AF"/>
+            android:textColorHint="#A0E8AF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="360dp"
@@ -81,19 +88,21 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/EditText5"
             android:layout_width="360dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="775px"
             android:layout_marginEnd="2dp"
-            android:layout_marginLeft="2dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
+            android:fontFamily="monospace"
+            android:gravity="center"
             android:hint="Phone Number"
             android:textColor="#3AB795"
-            android:textColorHint="#A0E8AF"/>
+            android:textColorHint="#A0E8AF" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="360dp"
@@ -101,18 +110,20 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/EditText6"
             android:layout_width="360dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="930px"
             android:layout_marginEnd="2dp"
-            android:layout_marginLeft="2dp"
-            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/button_rounded_disabeled"
+            android:fontFamily="monospace"
+            android:gravity="center"
             android:hint="Verify your Number"
             android:textColor="#3AB795"
-            android:textColorHint="#A0E8AF"/>
+            android:textColorHint="#A0E8AF" />
     </LinearLayout>
 </RelativeLayout>
