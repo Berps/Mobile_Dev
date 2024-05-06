@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "706941840076",
+    "project_id": "dbza-a5cf2",
+    "storage_bucket": "dbza-a5cf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706941840076:android:04ad25b3ac5c913c15b069",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXqif6QlcJ-pLUR3xYJnb9fn_LibbHTcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
