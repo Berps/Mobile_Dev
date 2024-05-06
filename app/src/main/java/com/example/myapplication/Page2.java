@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +15,29 @@ import com.google.zxing.integration.android.IntentResult;
 public class Page2 extends Fragment {
     Button scanButton;
     TextView qrCodeInfo;
+    private NotificationHelper notificationHelper;
 
     public Page2() {
         // Required empty public constructor
     }
 
+    public interface NotificationHelper {
+        void sendNotification(String message);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof NotificationHelper) {
+            notificationHelper = (NotificationHelper) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement NotificationHelper");
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_page2, container, false);
 
         scanButton = view.findViewById(R.id.scanButton);
@@ -43,11 +58,10 @@ public class Page2 extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null) {
-            if(result.getContents() != null) {
-                String scanResult = result.getContents();
-                qrCodeInfo.setText("Scan Result: " + scanResult);
-            }
+        if (result != null && result.getContents() != null) {
+            String scanResult = result.getContents();
+            qrCodeInfo.setText("Scan Result: " + scanResult);
+            notificationHelper.sendNotification("Item scanned: " + scanResult);
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
