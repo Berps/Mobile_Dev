@@ -21,6 +21,10 @@ public class Page3 extends Fragment {
 
         SharedPreferences preferences = getActivity().getSharedPreferences("AppPrefs", getActivity().MODE_PRIVATE);
         String email = preferences.getString("email", "No Email Found");
+        // Cut off everything after "@"
+        if (email.contains("@")) {
+            email = email.substring(0, email.indexOf("@"));
+        }
         textView.setText("Welcome " + email);
 
         return view;
